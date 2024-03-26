@@ -28,17 +28,20 @@ export function inserirNaFila(fila, item){
 }
 inserirNaFila(minhaFila, "Alessandra")
 console.log(minhaFila)
+inserirNaFila(minhaFila, "Isa")
+console.log(minhaFila)
 
 // Retirar da fila --> remover(fila:any[]):any[] --> passa um parâmetro:
 // fila que é uma array de qualquer coisa; e retorna qualquer coisa
 export function removerDaFila(fila){ 
-    let primeiro = fila[0]
-    if(primeiro === undefined){
-        for (let i = 0; i < fila.length; i++) {
-            fila[i] = fila[i+1]
-            primeiro = fila[i]
-        }
+    if(fila[0] === undefined){
+        return
     }
-    console.log(primeiro)
+    let primeiro = fila[0]
+    for (let i = 0; i < fila.length; i++) {
+        fila[i] = fila[i+1]
+        primeiro = fila[i]
+    }
 }
 removerDaFila(minhaFila)
+console.log(minhaFila)
